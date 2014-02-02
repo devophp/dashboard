@@ -1,0 +1,3 @@
+_devophp_etcdadmin_root:
+    resource: "@DevophpMainBundle/Controller/AdminController.php"
+    type:     annotation

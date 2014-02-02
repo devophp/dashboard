@@ -13,5 +13,3 @@ _configurator:
 _main:
     resource: routing.yml
 
-_devophp_etcd:
-    resource: "@DevophpEtcdBundle/Resources/config/routing.yml"

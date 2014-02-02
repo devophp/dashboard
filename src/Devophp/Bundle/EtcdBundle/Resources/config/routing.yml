@@ -1,8 +1,3 @@
-_welcome:
-    pattern:  /
-    defaults: { _controller: DevophpEtcdBundle:Welcome:index }
-
-_index:
+_devophp_main_root:
     resource: "@DevophpEtcdBundle/Controller/AdminController.php"
     type:     annotation
-    prefix:   /etcdadmin

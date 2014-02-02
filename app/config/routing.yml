@@ -1,0 +1,10 @@
+_welcome:
+    pattern:  /
+    defaults: { _controller: DevophpMainBundle:Admin:index }
+
+_devophp_main:
+    resource: "@DevophpMainBundle/Resources/config/routing.yml"
+
+_devophp_etcd:
+    resource: "@DevophpEtcdBundle/Resources/config/routing.yml"
+

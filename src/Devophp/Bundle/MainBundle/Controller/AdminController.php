@@ -1,6 +1,6 @@
 <?php
 
-namespace Devophp\Bundle\EtcdBundle\Controller;
+namespace Devophp\Bundle\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -14,21 +14,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class AdminController extends Controller
 {
     /**
-     * @Route("/etcdadmin", name="_devophp_etcdadmin_index")
+     * @Route("/index", name="_devophp_main_index")
      * @Template()
      */
     public function indexAction()
     {
         return array();
-    }
-
-    /**
-     * @Route("/hello/{name}", name="_demo_hello")
-     * @Template()
-     */
-    public function helloAction($name)
-    {
-        return array('name' => $name);
     }
 
 }
