@@ -5,10 +5,24 @@
 {% block content_header '' %}
 
 {% block content %}
-    <h1 class="title">Etcd admin</h1>
-    <ul id="demo-list">
-        <li><a href="{#{ path('_demo_hello', {'name': 'World'}) }#}">Hello World</a></li>
-        <li><a href="{#{ path('_demo_secured_hello', {'name': 'World'}) }#}">Access the secured area</a> <a href="{#{ path('_demo_login') }#}">Go to the login page</a></li>
-        {# <li><a href="{{ path('_demo_contact') }}">Send a Message</a></li> #}
-    </ul>
+    <h1 class="title">Etcd admin :: List clusters</h1>
+
+    <table class="table table-striped table-bordered table-hover">
+    	<thead>
+		    <tr>
+			    <th>ID</th>
+			    <th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for cluster in clusters %}
+	        <tr>
+	        	<td><a href="{{ path('_devophp_etcdadmin_editcluster', {'clusterid': cluster.id}) }}">#{{ cluster.id }}</a></td>
+	        	<td>{{ cluster.name }}</td>
+	        </tr>
+	    {% endfor %}
+	    </tbody>
+	</table>
+    
+    <a class="btn btn-primary" href="{{ path('_devophp_etcdadmin_addcluster') }}"><span class="glyphicon glyphicon-plus"></span> Add cluster</a>
 {% endblock %}
