@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title "Etcd admin :: Edit cluster" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Etcd admin :: Edit cluster {{ clusterid }} </h1>
+
+    Name: {{ cluster.name }}<br />
+    
+    {# <a class="btn btn-primary" href="{{ path('_devophp_etcdadmin_addserver') }}"><span class="glyphicon glyphicon-plus"></span> Add more</a>#}
+{% endblock %}

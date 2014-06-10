@@ -17,6 +17,30 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-1.10.1.min.js"></script>
 
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        
+        <style>
+            td.status_Warning {
+                background-color: #c0c040 !important;
+                color: #ffffff;
+            }
+            
+            td.status_OK {
+                background-color: #40c040 !important;
+                color: #ffffff;
+            }
+
+            td.status_Critical {
+                background-color: #c04040 !important;
+                color: #ffffff;
+            }
+            td.status_Unknown {
+                background-color: #404040 !important;
+                color: #ffffff;
+            }
+            td.status {
+                font-weight: bold !important;
+            }
+        </style>
 
         <title>Devophp Dashboard</title>
 
@@ -39,6 +63,7 @@
                 <li><a href="#">Settings</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Help</a></li>
+                <li><a href="{{ path('logout') }}">Logout!</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 {# <input type="text" class="form-control" placeholder="Search..."> #}
@@ -53,11 +78,11 @@
               <ul class="nav nav-sidebar">
                 <li class="active"><a href="{{ path('_welcome') }}">Overview</a></li>
                 <li><a href="{{ path('_devophp_etcdadmin_index') }}">Etcd</a></li>
+                <li><a href="{{ path('_devophp_monitoradmin_index') }}">Monitor</a></li>
                 <li><a href="#">Docker</a></li>
                 <li><a href="#">Metrics</a></li>
               </ul>
               <ul class="nav nav-sidebar">
-                <li><a href="">Monitorring</a></li>
                 <li><a href="">Nodes</a></li>
                 <li><a href="">Databases</a></li>
                 <li><a href="">Redis</a></li>

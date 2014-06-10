@@ -19,8 +19,11 @@ class AppKernel extends Kernel
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            $bundles[] = new Devophp\Bundle\UserBundle\DevophpUserBundle();
             $bundles[] = new Devophp\Bundle\MainBundle\DevophpMainBundle();
             $bundles[] = new Devophp\Bundle\EtcdBundle\DevophpEtcdBundle();
+            $bundles[] = new Devophp\Bundle\MonitorBundle\DevophpMonitorBundle();
+            $bundles[] = new Devophp\Bundle\DockerBundle\DevophpDockerBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

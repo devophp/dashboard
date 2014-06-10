@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title "Monitor admin" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Monitor admin :: Index</h1>
+
+	{% for agent in agents %}
+    <h2>{{ agent.hostname}}</h2>
+    
+    <table class="table table-striped table-bordered table-hover">
+    	<thead>
+		    <tr>
+			    <th>ID</th>
+			    <th>Details</th>
+			    <th style="text-align: center;">Status</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for agentcheck in agent.agentchecks %}
+	        <tr>
+	        	<td><a href="{{ path('_devophp_monitordadmin_viewagent', {'agenthostname': agent.hostname}) }}">#{{ agentcheck.checkdefinition.name }}</a></td>
+	        	<td>{{ agentcheck.serviceoutput }}<br />
+                {{ agentcheck.serviceperfdata }}<br />
+                <small>Last report: {{ agentcheck.lastreportstamp | date('d/m/Y H:i:s') }} ({{ now - agentcheck.lastreportstamp }} seconds ago)</small>
+                </td>
+                <td class="status status_{{ agentcheck.statustext }}" style="text-align: center;">
+                    {{ agentcheck.statustext }}
+                </td>
+	        </tr>
+	    {% endfor %}
+	    </tbody>
+	</table>
+    {% endfor %}
+    
+{% endblock %}

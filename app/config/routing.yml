@@ -2,9 +2,19 @@ _welcome:
     pattern:  /
     defaults: { _controller: DevophpMainBundle:Admin:index }
 
+user_routes:
+    resource: "@DevophpUserBundle/Controller"
+    type: annotation
+
 _devophp_main:
     resource: "@DevophpMainBundle/Resources/config/routing.yml"
 
 _devophp_etcd:
     resource: "@DevophpEtcdBundle/Resources/config/routing.yml"
 
+_devophp_monitor:
+    resource: "@DevophpMonitorBundle/Resources/config/routing.yml"
+
+_devophp_dockerhost_root:
+    resource: "@DevophpDockerBundle/Controller/DockerHostController.php"
+    type:     annotation
